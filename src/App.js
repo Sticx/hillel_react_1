@@ -1,25 +1,55 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends React.Component {
+  render() {
+    return (
+        <Grid/>
+    )
+  }
 }
 
-export default App;
+class Header extends React.Component {
+  render() {
+    return (<div className='grid-item grid-item-1'>Header block</div>)
+  }
+}
+
+class MainContainer extends React.Component {
+  render() {
+    return (<div className='grid-item grid-item-2'>
+      <article className='text'>
+        Text block
+      </article>
+    </div>)
+  }
+}
+
+class SideNav extends React.Component {
+  render() {
+    return (
+        <div className='grid-item grid-item-3'>
+          <div className='sidenav'>
+            <a href='#'>Link 1</a>
+            <a href='#'>Link 2</a>
+            <a href='#'>Link 3</a>
+            <a href='#'>Link 4</a>
+            <a href='#'>Link 5</a>
+            <a href='#'>Link 6</a>
+          </div>
+        </div>
+    )
+  }
+}
+
+class Grid extends React.Component {
+  render() {
+    return (
+        <div className='grid-container'>
+          <Header/>
+          <MainContainer/>
+          <SideNav/>
+        </div>
+    )
+  }
+}
